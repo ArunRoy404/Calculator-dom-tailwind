@@ -5,13 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- tailwind  -->
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-
+    <script src="scripts/app.js"></script>
     <title>Calculator</title>
 </head>
 <body>
     <header></header>
-    <main>
+    <main class="flex items-center h-[100vh] w-[100vw] bg-gradient-to-tr from-violet-400 to-violet-200">
         
+        <!-- calculator container  -->
+        <div class="p-7 shadow-2xl border-[1px] border-white/20 bg-purple-500/30 w-[450px] mx-auto rounded-2xl">
+            <!-- display  -->
+            <div class="mb-7 bg-[rgb(255,255,255,0.2)] h-[100px] rounded-xl p-5 flex items-center justify-end text-4xl font-bold text-white/70 ">
+                <h1 class="overflow-hidden whitespace-nowrap">
+                    0
+                </h1>
+            </div>
+
+            <!-- button container  -->
+            <div class="grid grid-cols-4 gap-6 text-white/70 font-bold text-2xl">
+                <button class=" bg-white/20 rounded-xl h-20 w-20 hover:bg-white/40 cursor-pointer">7</button>
+                 <button class=" bg-white/20 rounded-xl h-20 w-20 hover:bg-white/40 cursor-pointer">8</button>
+                 <button class=" bg-white/20 rounded-xl h-20 w-20 hover:bg-white/40 cursor-pointer">9</button>
+                 <button class=" bg-white/10 rounded-xl h-20 w-20 hover:bg-white/40 cursor-pointer">+</button>
+                 <button class=" bg-white/20 rounded-xl h-20 w-20 hover:bg-white/40 cursor-pointer">4</button>
+                 <button class=" bg-white/20 rounded-xl h-20 w-20 hover:bg-white/40 cursor-pointer">5</button>
+                 <button class=" bg-white/20 rounded-xl h-20 w-20 hover:bg-white/40 cursor-pointer">6</button>
+                 <button class=" bg-white/10 rounded-xl h-20 w-20 hover:bg-white/40 cursor-pointer">-</button>
+                 <button class=" bg-white/20 rounded-xl h-20 w-20 hover:bg-white/40 cursor-pointer">1</button>
+                 <button class=" bg-white/20 rounded-xl h-20 w-20 hover:bg-white/40 cursor-pointer">2</button>
+                 <button class=" bg-white/20 rounded-xl h-20 w-20 hover:bg-white/40 cursor-pointer">3</button>
+                 <button class=" bg-white/10 rounded-xl h-20 w-20 hover:bg-white/40 cursor-pointer">*</button>
+                 <button class=" bg-white/20 rounded-xl h-20 w-20 hover:bg-white/40 cursor-pointer">0</button>
+                 <button class=" bg-white/20 rounded-xl h-20 w-20 hover:bg-white/40 cursor-pointer">.</button>
+                 <button class=" bg-orange-400 rounded-xl h-20 w-20 hover:bg-orange-500 cursor-pointer">=</button>
+                 <button class=" bg-white/10 rounded-xl h-20 w-20 hover:bg-white/40 cursor-pointer">/</button>
+            </div>
+        </div>
     </main>
     <footer></footer>
 </body>
