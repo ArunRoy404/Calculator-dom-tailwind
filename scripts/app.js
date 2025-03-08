@@ -1,41 +1,43 @@
 let result = 0
+let lastOp = ''
 let op = ''
+let value = 0
 
-document.getElementById('button-container').addEventListener('click',(e)=>{
+document.getElementById('button-container').addEventListener('click', (e) => {
     const btnText = e.target.innerText;
-    if(btnText == 'C'){
-        clearDisplay()
-        op = ''
-    }
-    else if(btnText >=0 && btnText<=9){
+    if (btnText >= 0 && btnText <= 9) {
         addDisplayValue(btnText)
     }
-    else if(btnText == '.' && getElement('dot').value == 'false'){
+    else if (btnText === '.' && getElement('dot').value === 'false') {
         addDisplayValue(btnText)
         getElement('dot').value = 'true'
     }
-    else if(btnText == '='){
-        let value = parseFloat(getDisplayValue())
-        switch(op){
-            case '+':
-                result += value
-                break
-            case '-':
-                result -= value
-                break
-            case '*':
-                result *= value
-                break
-            case '/':
-                result /= value 
-                break
-        }
-        console.log(result, value, op)
-        setDisplay(result)
-    }
-    else{
-        result = parseFloat(getDisplayValue())
-        op = btnText
+    else if (btnText === 'C') {
         clearDisplay()
+    }
+    else if (btnText === 'AC') {
+        clearDisplay()
+        result = 0
+        lastOp = ''
+        op = ''
+        value = 0
+    }
+    else if (btnText === '=') {
+        value = getDisplayValue()
+        result = operation(result, value, lastOp)
+        setDisplay(result)
+        lastOp = ''
+    }
+    else {
+        value = getDisplayValue()
+        op =btnText
+        if(lastOp === ''){
+            result = value
+        }else{
+            result = operation(result, value, lastOp)
+        }
+        lastOp = op
+        clearDisplay()
+        console.log(result)
     }
 })
